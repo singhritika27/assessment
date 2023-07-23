@@ -1,0 +1,49 @@
+.header {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #DADCE0;
+}
+
+.heading {
+    font-size: 18px;
+    font-weight: 600;
+    /* color: #1C4980; */
+}
+
+label {
+    font-size: 14px;
+    font-weight: 500;
+    /* color: #1C4980; */
+}
+
+input {
+    width: 100%;
+    font-size: 14px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #DADCE0;
+    padding-left: 8px;
+}
+
+.padding {
+    padding: 8px 30px;
+}
+
+input::placeholder {
+    color: #1C4980;
+}
+select {
+    width: 100%;
+    font-size: 14px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #DADCE0;
+    padding-left: 8px;
+    color: #1C4980;
+}
+mat-form-field input::placeholder{
+    color: #1C4980;
+    font-size: 13px;
+}

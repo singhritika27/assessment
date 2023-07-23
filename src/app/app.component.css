@@ -1,0 +1,151 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+}
+
+.active-item {
+    background-color: antiquewhite
+}
+
+.active-link {
+    background-color: #E5F1FC;
+    border: 1px solid #0073E6;
+    border-radius: 8px;
+}
+
+.sidemenu {
+    text-align: center;
+    height: 77px;
+    width: 110px;
+    padding: 10px 15px;
+    margin-top: 5px;
+}
+
+.sidemenu a {
+    text-decoration: none;
+}
+
+.sidemenu button {
+    color: #D63500;
+    background-color: #FBEBEA;
+    border-radius: 22px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+}
+.sidemenu1{
+    /* height: 77px; */
+    /* width: 110px; */
+    padding: 10px;
+    margin-top: 8px;
+    color: #1C4980;
+    font-size: 14px;
+    font-weight: 600;
+}
+.sidemenu1 a {
+    text-decoration: none;
+    color: #1C4980;
+}
+.text1 {
+    font-size: 18px;
+    margin: 0;
+    font-weight: 600;
+    padding-top: 10px;
+    color: #1C4980;
+}
+.toggle_menu{
+    display: none;
+}
+.sideNav{
+    display: inline;
+    width: 150px;
+}
+
+hr {
+    margin: 10px 0 10px 0;
+    border-top-style: dashed;
+}
+/* For Desktop View */
+@media screen and (min-width: 1024px) {
+    .toggle_menu{
+        display: none;
+    }
+    .sideNav{
+        display: inline;
+    }
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .toggle_menu{
+        display: none;
+    }
+    .sideNav{
+        display: inline;
+    }
+}
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    .toggle_menu{
+        display: block;
+    }
+    .sideNav{
+        display: none;
+    }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+    .toggle_menu{
+        display: block;
+    }
+    .sideNav{
+        display: none;
+    }
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen and (max-device-width: 640px) {
+    .toggle_menu{
+        display: block;
+    }
+    .sideNav{
+        display: none;
+    }
+}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .toggle_menu{
+        display: block;
+    }
+    .sideNav{
+        display: none;
+    }
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+    .toggle_menu{
+        display: block;
+    }
+    .sideNav{
+        display: none;
+    }
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+    .toggle_menu{
+        display: block;
+    }
+    .sideNav{
+        display: none;
+    }
+}

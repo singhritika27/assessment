@@ -1,0 +1,295 @@
+<!--   ********Desktop View Start*********  -->
+<div class="row" style="background-color: whitesmoke;" *ngIf="!mobileView">
+    <div class="col-sm-12">
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" [(selectedIndex)]="demo1TabIndex">
+            <mat-tab label="Assessment"> Content 1 </mat-tab>
+            <mat-tab label="My Assessment">
+                <div class="row" style="margin: 10px 0 0 8px;">
+                    <div class="col-sm-12">
+                        <p style="color: #1C4980;font-weight: 500;font-size: 18px;">Assessment Overview</p>
+                    </div>
+                    <div class="col-sm-12">
+                        <mat-card class="border" style="border-radius: 8px;">
+                            <mat-card-content>
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-6 col-sm-12 border-right">
+                                        <p class="textheader">Total Assessment</p>
+                                        <div class="row center" style="padding-top: 10px;">
+                                            <div class="col-sm-3 col-3">
+                                                <i class="fa fa-bars icon" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-sm-5 col-5">
+                                                <span class="firSpan" style="margin-left: 5px;">34</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12 border-right">
+                                        <p class="textheader">Candidates</p>
+                                        <div class="row center">
+                                            <div class="col-2 col-sm-2">
+                                                <i class="fa fa-users icon" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-5 col-sm-5 border-right">
+                                                <span class="firSpan">11,145</span><span class="secSpan">+89</span><br>
+                                                <p class="text">Total Candidate</p>
+                                            </div>
+                                            <div class="col-5 col-sm-5">
+                                                <span class="firSpan">1,14</span><span class="secSpan">+89</span><br>
+                                                <p class="text">Who Attamped</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-6 col-sm-12 border-right">
+                                        <p class="textheader">Candidates Source</p>
+                                        <div class="row center">
+                                            <div class="col-sm-2 col-2" style="text-align: center;">
+                                                <i class="fa fa-globe icon" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-sm-3 col-4 border-right">
+                                                <span class="firSpan">11,000</span><span class="secSpan">+89</span><br>
+                                                <p class="text">E-mail</p>
+                                            </div>
+                                            <div class="col-sm-3 col-3 border-right">
+                                                <span class="firSpan">145</span><span class="secSpan">+89</span><br>
+                                                <p class="text">Social Share</p>
+                                            </div>
+                                            <div class="col-sm-3 col-3">
+                                                <span class="firSpan">145</span><span class="secSpan">+89</span><br>
+                                                <p class="text">Unique Link</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-sm-12">
+                                        <p class="textheader">Total Purpose</p>
+                                        <div class="row center" style="padding-top: 10px;">
+                                            <div class="col-sm-3 col-3">
+                                                <i class="fa fa-link icon" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-sm-5 col-5">
+                                                <span class="firSpan" style="margin-left: 5px;">11</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+                <div class="row" style="margin: 20px 0 0 8px;">
+                    <div class="col-sm-12" style="display: flex;justify-content: space-between;">
+                        <span style="color: #1C4980;font-weight: 500;font-size: 18px;">My Assessment</span>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <mat-card class="border1" style="background-color: #DADCE0;">
+                            <mat-card-content>
+                                <div class="row mt-3">
+                                    <div class="col-sm-12 center" style="justify-content: center;">
+                                        <button class="add" (click)="addNew(mobileView)">
+                                            <i class="fa fa-plus" aria-hidden="true" style="font-size: 25px;"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-12" style="text-align: center;">
+                                        <p class="text1">New Assessment</p>
+                                        <p style="font-size: 13px;font-weight: 500;">From here you can add questions of
+                                            multiple types like MCQs, subjective (text or paragraph)!</p>
+                                    </div>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12" *ngFor="let data of assessments">
+                        <mat-card class="border1">
+                            <mat-card-content>
+                                <div class="row">
+                                    <div class="col-sm-12 center" style="justify-content: space-between;">
+                                        <i class="fa fa-briefcase icon" aria-hidden="true"></i>
+                                        <i class="fa fa-ellipsis-v" aria-hidden="true" style="font-size: 20px;"></i>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <p class="text1">{{data.assessment_name}} Assessment</p>
+                                        <span class="job">Job</span>
+                                        <i class="fa fa-calendar" aria-hidden="true" style="margin: 0 5px;"></i>
+                                        <span class="date">{{data.job_date| date:'dd MMM, yyyy'}}</span>
+                                        <hr>
+                                    </div>
+                                    <div class="col-sm-2 col-2">
+                                        <p class="text2">{{data.duration}}</p>
+                                        <span class="job1">Duration</span>
+                                    </div>
+                                    <div class="col-sm-2 col-2">
+                                        <p class="text2">{{data.question}}</p>
+                                        <span class="job1">Questions</span>
+                                    </div>
+                                    <div class="col-sm-2 col-2"></div>
+                                    <div class="col-sm-3 col-3 center">
+                                        <button class="btn btn-outline-primary share"><i class="fa fa-link"
+                                                aria-hidden="true"></i>&nbsp;Share</button>
+                                    </div>
+                                    <div class="col-sm-2 col-2 center">
+                                        <span class="circle" style="background-color: #1C4980;">L</span>
+                                        <span class="circle"
+                                            style="margin-left: -15px;background-color: blueviolet;">L</span>
+                                    </div>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+<!--   ********Desktop View End*********  -->
+
+<!--   ********Mobile View Start*********  -->
+<div class="row" style="background-color: whitesmoke;width: 400px;" *ngIf="mobileView">
+    <div class="col-sm-12">
+        <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start" [(selectedIndex)]="demo1TabIndex">
+            <mat-tab label="Assessment"> Content 1 </mat-tab>
+            <mat-tab label="My Assessment">
+                <div class="row unstop" style="margin: 10px 0 0 8px;">
+                    <div class="col-sm-12">
+                        <p style="color: #1C4980;font-weight: 500;font-size: 18px;">Assessment Overview</p>
+                    </div>
+                    <div class="col-sm-12">
+                        <mat-card class="border" style="border-radius: 8px;">
+                            <mat-card-content>
+                                <div class="row">
+                                    <div class="col-sm-12 border-right">
+                                        <p class="textheader">Total Assessment</p>
+                                        <div class="row center" style="padding-top: 10px;">
+                                            <div class="col-3">
+                                                <i class="fa fa-bars icon" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-5">
+                                                <span class="firSpan" style="margin-left: 5px;">34</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 border-right">
+                                        <p class="textheader">Candidates</p>
+                                        <div class="row center">
+                                            <div class="col-2">
+                                                <i class="fa fa-users icon" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-5 border-right">
+                                                <span class="firSpan">11,145</span><span class="secSpan">+89</span><br>
+                                                <p class="text">Total Candidate</p>
+                                            </div>
+                                            <div class="col-5">
+                                                <span class="firSpan">1,14</span><span class="secSpan">+89</span><br>
+                                                <p class="text">Who Attamped</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 border-right">
+                                        <p class="textheader">Candidates Source</p>
+                                        <div class="row center">
+                                            <div class="col-2" style="text-align: center;">
+                                                <i class="fa fa-globe icon" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-4 border-right">
+                                                <span class="firSpan">11,000</span><span class="secSpan">+89</span><br>
+                                                <p class="text">E-mail</p>
+                                            </div>
+                                            <div class="col-3 border-right">
+                                                <span class="firSpan">145</span><span class="secSpan">+89</span><br>
+                                                <p class="text">Social Share</p>
+                                            </div>
+                                            <div class="col-3">
+                                                <span class="firSpan">145</span><span class="secSpan">+89</span><br>
+                                                <p class="text">Unique Link</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <p class="textheader">Total Purpose</p>
+                                        <div class="row center" style="padding-top: 10px;">
+                                            <div class="col-3">
+                                                <i class="fa fa-link icon" aria-hidden="true"></i>
+                                            </div>
+                                            <div class="col-5">
+                                                <span class="firSpan" style="margin-left: 5px;">11</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+                <div class="row" style="margin: 20px 0 0 8px;">
+                    <div class="col-sm-12" style="display: flex;justify-content: space-between;">
+                        <span style="color: #1C4980;font-weight: 500;font-size: 18px;">My Assessment</span>
+                        <span class="displayIcon" style="color: #1C4980;">
+                            <i class="fa fa-search" aria-hidden="true"></i>&nbsp;
+                            <i class="fa fa-filter" aria-hidden="true"></i>
+                            <button class="btn" *ngIf="display" (click)="showData()">
+                                <i class="fa fa-signal" aria-hidden="true" style="cursor: pointer;color: #1C4980;"></i>
+                            </button>
+                            <button *ngIf="!display" (click)="HideData()">
+                                <i class="fa fa-signal" aria-hidden="true" style="cursor: pointer;color: #1C4980;"></i>
+                            </button>
+                        </span>
+                    </div>
+                    <div class="col-sm-12">
+                        <mat-card class="border1" style="background-color: #DADCE0;">
+                            <mat-card-content>
+                                <div class="row mt-3">
+                                    <div class="col-sm-12 center" style="justify-content: center;">
+                                        <button class="add" (click)="addNew(mobileView)">
+                                            <i class="fa fa-plus" aria-hidden="true" style="font-size: 25px;"></i>
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-12" style="text-align: center;">
+                                        <p class="text1">New Assessment</p>
+                                        <p style="font-size: 13px;font-weight: 500;">From here you can add questions of
+                                            multiple types like MCQs, subjective (text or paragraph)!</p>
+                                    </div>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div class="col-sm-12" *ngFor="let data of assessments">
+                        <mat-card class="border1">
+                            <mat-card-content>
+                                <div class="row">
+                                    <div class="col-sm-12 center" style="justify-content: space-between;">
+                                        <i class="fa fa-briefcase icon" aria-hidden="true"></i>
+                                        <i class="fa fa-ellipsis-v" aria-hidden="true" style="font-size: 20px;"></i>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <p class="text1">{{data.assessment_name}} Assessment</p>
+                                        <span class="job">Job</span>
+                                        <i class="fa fa-calendar" aria-hidden="true" style="margin: 0 5px;"></i>
+                                        <span class="date">{{data.job_date| date:'dd MMM, yyyy'}}</span>
+                                        <hr>
+                                    </div>
+                                    <div class="col-2">
+                                        <p class="text2">{{data.duration}}</p>
+                                        <span class="job1">Duration</span>
+                                    </div>
+                                    <div class="col-2">
+                                        <p class="text2">{{data.question}}</p>
+                                        <span class="job1">Questions</span>
+                                    </div>
+                                    <div class="col-2"></div>
+                                    <div class="col-3 center">
+                                        <button class="btn btn-outline-primary share"><i class="fa fa-link"
+                                                aria-hidden="true"></i>&nbsp;Share</button>
+                                    </div>
+                                    <div class="col-2 center">
+                                        <span class="circle" style="background-color: #1C4980;">L</span>
+                                        <span class="circle"
+                                            style="margin-left: -15px;background-color: blueviolet;">L</span>
+                                    </div>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+<!--   ********Mobile View End*********  -->

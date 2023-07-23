@@ -1,0 +1,47 @@
+<div class="row form" style="color: #1C4980;" [style.width]="data.view == true ? '350px' : '500px'" [style.height]="data.view == true ? '400px' : '500px'">
+    <div class="col-sm-12 header" mat-dialog-actions>
+        <span class="heading">Create new assessment</span>
+        <button mat-button mat-dialog-close>
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+    </div>
+    <div class="col-sm-12 padding">
+        <label>Name of assessment</label><br>
+        <input type="text" placeholder="Type Here" [(ngModel)]="data.name">
+    </div>
+    <div class="col-sm-12 padding">
+        <label>Purpose of the test is</label><br>
+        <select name="" id="">
+            <option value="">Select</option>
+        </select>
+    </div>
+    <div class="col-sm-12 padding">
+        <label>Description</label><br>
+        <select name="" id="">
+            <option value="">Select</option>
+        </select>
+    </div>
+    <div class="col-sm-12 padding">
+        <label>Skills</label><br>
+        <mat-form-field class="example-form-field" style="width: 100%;">
+            <mat-chip-grid #chipGrid aria-label="Enter keywords" [formControl]="formControl" >
+              <mat-chip-row *ngFor="let keyword of keywords" (removed)="removeKeyword(keyword)">
+                {{keyword}}
+                <button matChipRemove aria-label="'remove ' + keyword">
+                  <mat-icon>cancel</mat-icon>
+                </button>
+              </mat-chip-row>
+            </mat-chip-grid>
+            <input placeholder="Type Here"
+                    [matChipInputFor]="chipGrid"
+                    (matChipInputTokenEnd)="add($event)"/>
+          </mat-form-field>
+    </div>
+    <div class="col-sm-12 padding">
+        <label>Duration of assessment</label><br>
+        <input type="hour" [(ngModel)]="data.time">
+    </div>
+    <div class="col-sm-12 padding">
+        <button class="btn btn-primary" style="width: 100%;height: 35px;" [mat-dialog-close]="data">Save</button>
+    </div>
+</div>
